@@ -14,8 +14,8 @@ class TranscriptionData(BaseModel):
     transcription: str
 
 previous_questions_and_answers = []
-@app.get("/")
-def chat():
+@app.get("/", response_class=HTMLResponse)
+def chat(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 @app.get("/chat/", response_class=HTMLResponse)
