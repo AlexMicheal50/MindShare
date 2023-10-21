@@ -16,7 +16,7 @@ class TranscriptionData(BaseModel):
 previous_questions_and_answers = []
 @app.get("/")
 def chat():
-    print ("hello")
+    return templates.TemplateResponse("home.html", {"request": request})
 
 @app.get("/chat/", response_class=HTMLResponse)
 async def render_template(request: Request):
